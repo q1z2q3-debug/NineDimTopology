@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#FF1C1914</color>
+    <color name="ochre">#FFA35832</color>
+    <color name="pine">#FF3C4A42</color>
+    <color name="paper">#FFF1E9DA</color>
+    <color name="paper_dark">#FFE8DFC8</color>
+    <color name="text_primary">#FF1C1914</color>
+    <color name="text_secondary">#FF5B544B</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
