@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.ninedim.topology.core.ConstitutionType
+import com.ninedim.core.ConstitutionType
 import com.ninedim.topology.ui.theme.Ink
 import com.ninedim.topology.ui.theme.Ochre
 import com.ninedim.topology.ui.theme.Paper
@@ -108,7 +108,7 @@ fun ConstitutionScreen(navController: NavController) {
                             Text("九维向量偏移", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Ink)
                             Spacer(modifier = Modifier.height(12.dp))
                             val vals = type.vector.toArray()
-                            com.ninedim.topology.core.NineDimVector.DIMENSION_NAMES.forEachIndexed { i, name ->
+                            com.ninedim.core.NineDimVector.DIMENSION_NAMES.forEachIndexed { i, name ->
                                 Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 3.dp)) {
                                     Text("D${i+1} $name", fontSize = 11.sp, color = Color.Gray, modifier = Modifier.width(70.dp))
                                     LinearProgressIndicator(
@@ -130,7 +130,7 @@ fun ConstitutionScreen(navController: NavController) {
                             Text("调理方向", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Ink)
                             Spacer(modifier = Modifier.height(8.dp))
                             val dominant = type.vector.dominantDimension()
-                            val dominantName = com.ninedim.topology.core.NineDimVector.DIMENSION_NAMES[dominant]
+                            val dominantName = com.ninedim.core.NineDimVector.DIMENSION_NAMES[dominant]
                             Text("该体质以 $dominantName 维度（D${dominant+1}）偏移最为显著，调理应针对该维度进行反向校正，同时兼顾其他失衡维度。", fontSize = 13.sp, color = Color(0xFF5B544B), lineHeight = 22.sp)
                         }
                     }

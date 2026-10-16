@@ -1,6 +1,6 @@
-package com.ninedim.topology.data
+package com.ninedim.core.data
 
-import com.ninedim.topology.core.NineDimVector
+import com.ninedim.core.NineDimVector
 
 /**
  * 药物数据类

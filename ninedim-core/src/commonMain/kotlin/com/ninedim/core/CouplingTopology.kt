@@ -1,4 +1,4 @@
-package com.ninedim.topology.core
+package com.ninedim.core
 
 /**
  * 十种配伍耦合拓扑类型

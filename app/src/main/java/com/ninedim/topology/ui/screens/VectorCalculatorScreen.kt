@@ -16,8 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.ninedim.topology.core.NineDimVector
-import com.ninedim.topology.data.HerbDatabase
+import com.ninedim.core.NineDimVector
+import com.ninedim.core.data.HerbDatabase
 import com.ninedim.topology.ui.theme.Ink
 import com.ninedim.topology.ui.theme.Ochre
 import com.ninedim.topology.ui.theme.Paper

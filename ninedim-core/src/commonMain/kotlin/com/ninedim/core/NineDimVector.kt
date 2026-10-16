@@ -1,4 +1,4 @@
-package com.ninedim.topology.core
+package com.ninedim.core
 
 /**
  * 九维向量：描述药物/方剂/病机的药效方向

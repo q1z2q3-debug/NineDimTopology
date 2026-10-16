@@ -1,4 +1,4 @@
-package com.ninedim.topology.core
+package com.ninedim.core
 
 /**
  * 七情关系的相互作用系数 κ

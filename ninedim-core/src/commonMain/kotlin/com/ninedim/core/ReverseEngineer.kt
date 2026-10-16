@@ -1,4 +1,4 @@
-package com.ninedim.topology.core
+package com.ninedim.core
 
 /**
  * 逆向推导引擎：从病机反推最优耦合拓扑和候选方剂

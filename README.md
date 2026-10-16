@@ -54,22 +54,61 @@ V_j = Σ(w_i × v_ij) + Σ(κ_ik × w_i × w_k × (v_ij ⊗ v_kj))
 
 ```
 NineDimTopology/
-├── app/src/main/java/com/ninedim/topology/
-│   ├── core/          # 核心算法（向量/拓扑/合成/逆向推导）
-│   ├── data/          # 数据层（中药库/方剂库）
-│   └── ui/            # UI层（Compose页面/导航/主题）
+├── ninedim-core/              # Kotlin Multiplatform 核心库
+│   └── src/commonMain/kotlin/com/ninedim/core/
+│       ├── NineDimVector.kt       # 九维向量数据类
+│       ├── CouplingTopology.kt    # 十种耦合拓扑识别
+│       ├── FormulaEngine.kt       # 向量合成引擎（七情κ系数）
+│       ├── ReverseEngineer.kt    # 逆向推导引擎 + 九种体质
+│       └── data/
+│           ├── HerbDatabase.kt     # 33味中药库
+│           └── FormulaDatabase.kt  # 12首经典方剂库
+├── app/                       # Android 应用（Jetpack Compose）
+│   └── src/main/java/com/ninedim/topology/ui/
 ├── README.md
 ├── LICENSE
 └── build.gradle.kts
 ```
 
+## 作为库使用
+
+核心算法已抽为独立的 Kotlin Multiplatform 库 `ninedim-core`，支持 JVM 平台：
+
+```kotlin
+// build.gradle.kts
+dependencies {
+    implementation(project(":ninedim-core"))
+}
+```
+
+```kotlin
+import com.ninedim.core.NineDimVector
+import com.ninedim.core.FormulaEngine
+import com.ninedim.core.ReverseEngineer
+
+// 计算药物向量合成
+val v = NineDimVector(d2 = 1.0, d4 = 3.0, d7 = 3.0) // 麻黄
+val result = FormulaEngine.mahuangTangDemo()
+
+// 逆向推导：从病机反推方剂
+val disease = NineDimVector(d7 = 2.0, d2 = -1.0)
+val result = ReverseEngineer.engineer(disease)
+println(result.candidateFormulas)
+```
+
 ## 构建
 
 ```bash
+# 构建 Android APK
 ./gradlew assembleDebug
+
+# 构建核心库 JVM jar
+./gradlew :ninedim-core:jvmJar
 ```
 
-输出：`app/build/outputs/apk/debug/app-debug.apk`
+输出：
+- APK: `app/build/outputs/apk/debug/app-debug.apk`
+- JVM 库: `ninedim-core/build/libs/ninedim-core-jvm-1.0.0.jar`
 
 ## 技术栈
 

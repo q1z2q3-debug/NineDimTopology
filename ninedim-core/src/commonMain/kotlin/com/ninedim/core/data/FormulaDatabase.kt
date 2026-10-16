@@ -1,7 +1,7 @@
-package com.ninedim.topology.data
+package com.ninedim.core.data
 
-import com.ninedim.topology.core.CouplingType
-import com.ninedim.topology.core.NineDimVector
+import com.ninedim.core.CouplingType
+import com.ninedim.core.NineDimVector
 
 /**
  * 方剂数据类

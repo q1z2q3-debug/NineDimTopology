@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "NineDimTopology"
 include(":app")
+include(":ninedim-core")
