@@ -8,12 +8,11 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,7 +26,7 @@ import com.ninedim.topology.ui.theme.Pine
 data class FeatureItem(
     val title: String,
     val subtitle: String,
-    val icon: ImageVector,
+    val glyph: String,
     val route: String,
     val color: androidx.compose.ui.graphics.Color
 )
@@ -36,12 +35,12 @@ data class FeatureItem(
 @Composable
 fun HomeScreen(navController: NavController) {
     val features = listOf(
-        FeatureItem("向量计算器", "九维向量合成与可视化", Icons.Default.Calculate, Routes.VECTOR_CALC, Ochre),
-        FeatureItem("方剂分析", "经典方剂拓扑结构解析", Icons.Default.Science, Routes.FORMULA_ANALYSIS, Pine),
-        FeatureItem("逆向推导", "从病机反推候选方剂", Icons.Default.AutoFixHigh, Routes.REVERSE_ENGINEER, Ink),
-        FeatureItem("体质辨识", "九种体质基底向量建模", Icons.Default.Person, Routes.CONSTITUTION, Ochre),
-        FeatureItem("关于框架", "九维耦合拓扑框架介绍", Icons.Default.Info, Routes.ABOUT, Pine),
-        FeatureItem("药物库", "内置30+常用中药数据", Icons.Default.MenuBook, Routes.VECTOR_CALC, Ink)
+        FeatureItem("向量计算器", "九维向量合成与可视化", "算", Routes.VECTOR_CALC, Ochre),
+        FeatureItem("方剂分析", "经典方剂拓扑结构解析", "方", Routes.FORMULA_ANALYSIS, Pine),
+        FeatureItem("逆向推导", "从病机反推候选方剂", "推", Routes.REVERSE_ENGINEER, Ink),
+        FeatureItem("体质辨识", "九种体质基底向量建模", "质", Routes.CONSTITUTION, Ochre),
+        FeatureItem("关于框架", "九维耦合拓扑框架介绍", "论", Routes.ABOUT, Pine),
+        FeatureItem("药物库", "内置30+常用中药数据", "药", Routes.VECTOR_CALC, Ink)
     )
 
     Column(
@@ -49,7 +48,6 @@ fun HomeScreen(navController: NavController) {
             .fillMaxSize()
             .background(Paper)
     ) {
-        // Header
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -81,7 +79,6 @@ fun HomeScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Feature Grid
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             contentPadding = PaddingValues(16.dp),
@@ -131,14 +128,15 @@ fun FeatureCard(feature: FeatureItem, onClick: () -> Unit) {
                 .padding(16.dp)
         ) {
             Surface(
-                color = feature.color.copy(alpha = 0.15f),
+                color = feature.color.copy(alpha = 0.12f),
                 shape = RoundedCornerShape(10.dp)
             ) {
-                Icon(
-                    imageVector = feature.icon,
-                    contentDescription = feature.title,
-                    tint = feature.color,
-                    modifier = Modifier.padding(8.dp)
+                Text(
+                    text = feature.glyph,
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = feature.color,
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
