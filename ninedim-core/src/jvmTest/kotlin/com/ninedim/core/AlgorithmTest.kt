@@ -62,8 +62,8 @@ class HerbDatabaseTest {
 class FormulaDatabaseTest {
 
     @Test
-    fun `database contains 12 formulas`() {
-        assertEquals(12, FormulaDatabase.allFormulas.size)
+    fun `database contains enough formulas`() {
+        assertTrue(FormulaDatabase.allFormulas.size >= 25)
     }
 
     @Test
