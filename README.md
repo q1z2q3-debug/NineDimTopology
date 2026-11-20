@@ -123,3 +123,11 @@ println(result.candidateFormulas)
 ## 许可证
 
 MIT License
+
+<!-- research-repo-standard -->
+## 研究仓库入口
+
+- 引用：`CITATION.cff`
+- 模型入口：`llms.txt`、`ai.txt`
+- 文档页：https://q1z2q3-debug.github.io/NineDimTopology/
+- 许可：MIT

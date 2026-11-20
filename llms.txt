@@ -1,0 +1,28 @@
+# 九维耦合拓扑：中医方剂配伍的数学语言
+
+> 九维药效向量 × 十种耦合拓扑；把方剂配伍写成可计算的向量结构。
+
+Canonical repository: https://github.com/q1z2q3-debug/NineDimTopology
+Documentation: https://q1z2q3-debug.github.io/NineDimTopology/
+
+## What this is
+
+把每味药抽象为九维药效向量，把方剂配伍抽象为向量空间中的耦合拓扑。项目给出 33 味药、12 首经典方剂的向量计算、拓扑识别与逆向推导，并明确这是理论研究工具，不是临床建议。
+
+## Entry points
+
+- GitHub: https://github.com/q1z2q3-debug/NineDimTopology
+- README: https://github.com/q1z2q3-debug/NineDimTopology/blob/main/README.md
+
+## Citation
+
+- `CITATION.cff` in this repository
+- Author: 润泽（润泽博士）
+- Date: 2026-11-20
+- License: MIT
+
+## Machine-readable
+
+- `llms.txt` (this file)
+- `ai.txt`
+- `CITATION.cff`

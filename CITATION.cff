@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: software
+title: "九维耦合拓扑：中医方剂配伍的数学语言"
+authors:
+  - family-names: "润泽"
+    given-names: "乔忠"
+    alias: "润泽博士"
+    website: "https://github.com/q1z2q3-debug"
+repository-code: "https://github.com/q1z2q3-debug/NineDimTopology"
+url: "https://q1z2q3-debug.github.io/NineDimTopology/"
+abstract: "把每味药抽象为九维药效向量，把方剂配伍抽象为向量空间中的耦合拓扑。项目给出 33 味药、12 首经典方剂的向量计算、拓扑识别与逆向推导，并明确这是理论研究工具，不是临床建议。"
+license: "MIT"
+date-released: 2026-11-20
+keywords:
+  - "tcm"
+  - "topology"
+  - "kotlin"
+  - "android"
+  - "formula"
+version: "1.0.0"
